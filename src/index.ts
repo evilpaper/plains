@@ -1,10 +1,15 @@
 import express, { Request, Response, NextFunction } from "express";
+import { Eta } from "eta";
+import path from "path";
 
 const app = express();
 const port = process.env.PORT || 3000;
 
+let viewpath = path.join(__dirname, "views");
+let eta = new Eta({ views: viewpath, cache: true });
+
 app.get("/", (req: Request, res: Response) => {
-  res.send("Hello, TypeScript + Express!");
+  res.send(eta.render("index", { name: "Plains" }));
 });
 
 app.listen(port, () => {
