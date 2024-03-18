@@ -9,7 +9,7 @@ let viewpath = path.join(__dirname, "views");
 let eta = new Eta({ views: viewpath, cache: true });
 
 app.get("/", (req: Request, res: Response) => {
-  res.send(eta.render("index", { name: "Plains" }));
+  res.send(eta.render("index", { title: "Plains", name: "Plains" }));
 });
 
 app.listen(port, () => {

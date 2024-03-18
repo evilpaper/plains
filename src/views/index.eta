@@ -1,1 +1,3 @@
-Welcome to <%= it.name %>!
+<% layout("./layout") %>
+
+<p>Welcome to <%= it.name %>!</p>
