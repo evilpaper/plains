@@ -8,25 +8,30 @@ const port = process.env.PORT || 3000;
 let viewpath = path.join(__dirname, "views");
 let eta = new Eta({ views: viewpath, cache: true });
 
-app.get("/", (req: Request, res: Response) => {
-  res.send(eta.render("index", { title: "Plains", name: "Plains" }));
+app.get("/about", (req: Request, res: Response) => {
+  res.send(eta.render("about", { title: "Plains", name: "About" }));
 });
 
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+app.get("/", (req: Request, res: Response) => {
+  res.send(eta.render("home", { title: "Plains", name: "Plains" }));
 });
 
 // Custom 404 page
 app.use((req: Request, res: Response) => {
-  res.type("text/plain");
   res.status(404);
-  res.send("404 · Not found");
+  res.send(eta.render("404", { title: "404" }));
 });
 
 // Custom 500 page
 app.use((err: any, req: Request, res: Response, next: NextFunction) => {
   console.error(err.message);
-  res.type("text/plain");
   res.status(500);
-  res.send("500 · Server Error");
+  res.send(eta.render("500", { title: "500" }));
+});
+
+app.listen(port, () => {
+  console.log(
+    `Server is running on http://localhost:${port}; ` +
+      `press CTRL-C to terminate.`
+  );
 });
