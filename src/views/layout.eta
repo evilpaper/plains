@@ -4,6 +4,9 @@
     <title><%= it.title %></title>
   </head>
   <body>
+    <header>
+      <img src="/plains-logo.png" alt="Plains Logo">
+    </header>
     <%~ it.body %>
     <footer>Copyright Plains.</footer>
   </body>

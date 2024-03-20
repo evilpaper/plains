@@ -8,6 +8,8 @@ const port = process.env.PORT || 3000;
 let viewpath = path.join(__dirname, "views");
 let eta = new Eta({ views: viewpath, cache: true });
 
+app.use(express.static("public"));
+
 app.get("/about", (req: Request, res: Response) => {
   res.send(eta.render("about", { title: "Plains", name: "About" }));
 });
