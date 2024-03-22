@@ -10,8 +10,24 @@ let eta = new Eta({ views: viewpath, cache: true });
 
 app.use(express.static("public"));
 
+const fortunes = [
+  "Conquer your fears or they will conquer you.",
+  "Rivers need springs.",
+  "Do not fear what you don't know.",
+  "You will have a pleasant surprise.",
+  "Whenever possible, keep tt simple.",
+];
+
 app.get("/about", (req: Request, res: Response) => {
-  res.send(eta.render("about", { title: "Plains", name: "About" }));
+  const randomFortune = fortunes[Math.floor(Math.random() * fortunes.length)];
+  console.log(randomFortune);
+  res.send(
+    eta.render("about", {
+      title: "Plains",
+      name: "About",
+      fortune: `${randomFortune}`,
+    })
+  );
 });
 
 app.get("/", (req: Request, res: Response) => {
