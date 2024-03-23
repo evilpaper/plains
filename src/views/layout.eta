@@ -2,12 +2,12 @@
 <html lang="en">
   <head>
     <title><%= it.title %></title>
+    <link rel="stylesheet" href="/styles.css">
   </head>
   <body>
     <header>
-      <img src="/plains-logo.png" alt="Plains Logo">
     </header>
     <%~ it.body %>
-    <footer>Copyright Plains.</footer>
+    <footer>Plains</footer>
   </body>
 </html>
