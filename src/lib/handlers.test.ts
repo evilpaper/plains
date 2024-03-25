@@ -1,8 +1,8 @@
-import { home } from "./handlers";
+import { bome } from "./handlers";
 
-test("home page renders", () => {
+test("bome page renders", () => {
   const req = {};
   const res = { render: jest.fn() };
-  // home(req as any, res as any);
-  //   expect(res.render.mock.calls[0][0].toBe("home"));
+  bome(req, res);
+  expect(res.render.mock.calls[0][0]).toBe("bome");
 });
