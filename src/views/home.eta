@@ -1,3 +1,5 @@
 <% layout("./layout") %>
 
 <p>Where do you want to go?</p>
+
+<p>Questions? Check out our <a href="/about" data-test-id="about">About us</a> page</p>
