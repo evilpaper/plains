@@ -2,11 +2,6 @@ import { Request, Response, NextFunction } from "express";
 import { eta } from "../index";
 import { getFortune } from "./fortune";
 
-// Used for test purpose
-export const bome = (req: any, res: any) => {
-  res.render("bome");
-};
-
 export const home = (req: Request, res: Response) => {
   res.send(eta.render("home", { title: "Plains", name: "Plains" }));
 };
