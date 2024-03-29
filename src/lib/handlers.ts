@@ -22,7 +22,7 @@ export const notFound = (req: Request, res: Response) => {
 };
 
 export const serverError = (
-  err: any,
+  err: Error,
   req: Request,
   res: Response,
   next: NextFunction
