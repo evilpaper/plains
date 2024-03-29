@@ -1,7 +1,6 @@
 import express from "express";
 import { Eta } from "eta";
 import path from "path";
-
 import { home, about, notFound, serverError } from "./lib/handlers";
 
 const app = express();
